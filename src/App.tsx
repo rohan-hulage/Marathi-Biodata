@@ -38,10 +38,9 @@ function App() {
       <header>
         {/* ... header content ... */}
         <p className="tag">संस्कारी प्रोफाइल</p>
-        <h1>Marathi विवाह बायोडाटा</h1>
+        <h1>मराठी विवाह बायोडाटा</h1>
         <p className="subtitle">
-          English मध्ये टाईप करा किंवा पेस्ट करा — मजकूर आपोआप मराठीत रूपांतरित
-          होईल.
+          सोप्या पद्धतीने सुंदर विवाह बायोडाटा तयार करा.
         </p>
       </header>
       <main className="layout">
