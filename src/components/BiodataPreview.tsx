@@ -5,10 +5,16 @@ type Props = {
   data: Biodata;
 };
 
+const formatDate = (dateString?: string) => {
+  if (!dateString) return "";
+  const [year, month, day] = dateString.split("-");
+  return year && month && day ? `${day}/${month}/${year}` : dateString;
+};
+
 export function BiodataPreview({ data }: Props) {
   const personalRows = [
     { label: "नाव", value: data.fullName },
-    { label: "जन्म तारीख", value: data.dob },
+    { label: "जन्म तारीख", value: formatDate(data.dob) },
     { label: "जन्माची वेळ", value: data.birthTime },
     { label: "जन्म ठिकाण", value: data.birthPlace },
     {
