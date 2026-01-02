@@ -12,7 +12,9 @@ export function FormField({ field, value, onChange }: Props) {
   const { key, label, inputType = "transliterate", placeholder, rows } = field;
 
   const handlePlainInput = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     onChange(key, event.target.value);
   };
@@ -45,6 +47,27 @@ export function FormField({ field, value, onChange }: Props) {
           placeholder={placeholder}
           onValueChange={(text) => onChange(key, text)}
         />
+      </label>
+    );
+  }
+
+  if (inputType === "select") {
+    return (
+      <label htmlFor={fieldId}>
+        <span>{label}</span>
+        <select
+          id={fieldId}
+          value={value}
+          onChange={handlePlainInput}
+          className="select-input"
+        >
+          <option value="">निवडा</option>
+          {field.options?.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       </label>
     );
   }

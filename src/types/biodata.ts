@@ -4,7 +4,8 @@ export type FieldInputType =
   | "date"
   | "tel"
   | "email"
-  | "text";
+  | "text"
+  | "select";
 
 export type Biodata = {
   fullName: string;
@@ -44,6 +45,7 @@ export type FieldConfig = {
   inputType?: FieldInputType;
   placeholder?: string;
   rows?: number;
+  options?: string[];
 };
 
 export type SectionConfig = {
