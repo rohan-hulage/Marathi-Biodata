@@ -33,8 +33,8 @@ export const generatePdf = async (elementId: string, fileName: string) => {
         pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
         heightLeft -= pageHeight;
 
-        // Handle multi-page if content is longer than A4
-        while (heightLeft >= 0) {
+        // Handle multi-page if content is longer than A4 (with 1mm tolerance)
+        while (heightLeft > 1) {
             position = heightLeft - imgHeight;
             pdf.addPage();
             pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
