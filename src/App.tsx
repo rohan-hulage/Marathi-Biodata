@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useState, useEffect } from "react";
 import "./App.css";
 import { sections } from "./data/sections";
@@ -63,6 +64,7 @@ function App() {
         </section>
       </main>
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
