@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useState, useEffect } from "react";
 import "./App.css";
 import { sections } from "./data/sections";
@@ -7,6 +8,7 @@ import { PhotoUploader } from "./components/PhotoUploader";
 import { generatePdf } from "./utils/pdfGenerator";
 import { initialBiodata } from "./types/biodata";
 import type { Biodata } from "./types/biodata";
+
 
 function App() {
   const [data, setData] = useState<Biodata>(() => {
@@ -60,6 +62,7 @@ function App() {
           </button>
         </section>
       </main>
+      <Analytics />
     </div>
   );
 }
