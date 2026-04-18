@@ -10,7 +10,7 @@ export const generatePdf = async (elementId: string, fileName: string) => {
 
     try {
         const canvas = await html2canvas(element, {
-            scale: 2, // Higher scale for better quality
+            scale: 3, // High scale for crisp text and images without blowing up file size
             useCORS: true, // Handle cross-origin images
             logging: false,
             backgroundColor: "#ffffff",

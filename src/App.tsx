@@ -12,12 +12,22 @@ import type { Biodata } from "./types/biodata";
 
 function App() {
   const [data, setData] = useState<Biodata>(() => {
-    const saved = localStorage.getItem("biodata-form");
-    return saved ? JSON.parse(saved) : initialBiodata;
+    try {
+      const saved = localStorage.getItem("biodata-form");
+      return saved ? JSON.parse(saved) : initialBiodata;
+    } catch (error) {
+      console.error("Error reading from local storage", error);
+      return initialBiodata;
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem("biodata-form", JSON.stringify(data));
+    try {
+      const { photoData, ...dataToSave } = data;
+      localStorage.setItem("biodata-form", JSON.stringify(dataToSave));
+    } catch (error) {
+      console.error("Error saving to local storage", error);
+    }
   }, [data]);
 
   const handleChange = (key: keyof Biodata, value: string) => {
