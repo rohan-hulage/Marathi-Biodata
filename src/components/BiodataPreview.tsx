@@ -40,6 +40,7 @@ export function BiodataPreview({ data }: Props) {
   const careerRows = [
     { label: "शिक्षण", value: data.education },
     { label: "नोकरी / व्यवसाय", value: data.occupation },
+    { label: "शेती", value: data.sheti },
     { label: "वार्षिक उत्पन्न", value: data.annualIncome },
   ].filter((row) => row.value?.trim());
 

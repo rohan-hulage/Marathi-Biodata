@@ -156,6 +156,7 @@ export const sections: SectionConfig[] = [
         inputType: "textarea",
         rows: 3,
       },
+      { key: "sheti", label: "शेती" },
       { key: "annualIncome", label: "वार्षिक उत्पन्न", inputType: "text" },
     ],
   },

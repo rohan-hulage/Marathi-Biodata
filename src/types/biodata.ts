@@ -19,6 +19,7 @@ export type Biodata = {
   caste: string;
   education: string;
   occupation: string;
+  sheti: string;
   annualIncome: string;
   fatherName: string;
   motherName: string;
@@ -66,6 +67,7 @@ export const initialBiodata: Biodata = {
   caste: "",
   education: "",
   occupation: "",
+  sheti: "",
   annualIncome: "",
   fatherName: "",
   motherName: "",
